@@ -276,6 +276,22 @@ export default function ShortenerWidget() {
                         >
                             {isLoading ? 'Shortening...' : 'Shorten'}
                         </button>
+
+                        {/* Render Free Tier Info Message */}
+                        {isLoading && (
+                            <div className="mt-4 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg">
+                                <div className="flex items-start gap-3">
+                                    <Info className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                                    <div className="text-sm text-blue-700">
+                                        <p className="font-semibold mb-1">Please wait...</p>
+                                        <p className="text-blue-600">
+                                            This is a demo using Render's free tier. If the server was idle,
+                                            it may take 30-60 seconds to wake up. Thank you for your patience!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </form>
                 ) : (
                     // Success State
