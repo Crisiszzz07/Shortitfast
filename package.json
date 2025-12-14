@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch 'backend/**/*.ts' --exec 'ts-node' backend/index.ts",
-    "build": "tsc",
+    "build": "tsc && echo '--- CONTENIDO DE DIST ---' && ls -R dist",
     "start": "node dist/index.js"
   },
   "keywords": [],
