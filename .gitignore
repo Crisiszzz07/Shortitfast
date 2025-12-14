@@ -1,0 +1,9 @@
+# Ignorar dependencias en cualquier subcarpeta
+**/node_modules
+**/dist
+**/build
+
+# Ignorar variables de entorno
+.env 
+**/.env
+.DS_Store

@@ -1,0 +1,43 @@
+---
+import FloatingShapes from "../components/FloatingShapes.astro";
+import ShortenerWidget from "../components/ShortenerWidget";
+---
+
+<section
+    class="relative min-h-[90vh] flex items-center justify-center px-6 py-20"
+>
+    <!-- Floating Background Shapes -->
+    <FloatingShapes />
+
+    <!-- Content -->
+    <div class="relative z-10 w-full max-w-5xl mx-auto text-center">
+        <!-- Headline -->
+        <h1
+            class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
+        >
+            <span class="text-gray-900">Make your links</span>
+            <br />
+            <span
+                class="bg-gradient-to-r from-brand-purple to-brand-purple-dark bg-clip-text text-transparent"
+            >
+                short & sweet
+            </span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p
+            class="text-xl md:text-2xl text-gray-600 mb-16 max-w-2xl mx-auto font-medium"
+        >
+            The fastest way to shorten your URLs. Simple, reliable, and
+            lightning-fast.
+        </p>
+
+        <!-- Interactive Widget (React Island) -->
+        <ShortenerWidget client:load />
+
+        <!-- Trust Badge -->
+        <p class="mt-10 text-sm text-gray-500 font-medium">
+            ✨ No signup required • Free forever • Lightning fast
+        </p>
+    </div>
+</section>

@@ -1,0 +1,69 @@
+---
+import { Zap, Activity, Shield } from "lucide-astro";
+---
+
+<section class="py-24 px-6 bg-brand-cream">
+    <div class="max-w-7xl mx-auto">
+        <h2
+            class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"
+        >
+            Why choose <span class="text-brand-purple">Shortitfast</span>?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Lightning Speed Card -->
+            <article
+                class="group bg-white rounded-2xl p-8 border border-gray-100 shadow-float hover:shadow-glow-purple transition-all duration-300"
+            >
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-brand-lime to-brand-lime-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                >
+                    <Zap class="w-9 h-9 text-white" strokeWidth={2.5} />
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">
+                    Lightning Speed
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Shorten your URLs in milliseconds. Our optimized
+                    infrastructure ensures instant results every single time.
+                </p>
+            </article>
+
+            <!-- Detailed Analytics Card -->
+            <article
+                class="group bg-white rounded-2xl p-8 border border-gray-100 shadow-float hover:shadow-glow-purple transition-all duration-300"
+            >
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-brand-purple to-brand-purple-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                >
+                    <Activity class="w-9 h-9 text-white" strokeWidth={2.5} />
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">
+                    Detailed Analytics
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Track clicks, locations, and devices. Get real-time insights
+                    into how your shortened links perform.
+                </p>
+            </article>
+
+            <!-- Unshakeable Reliability Card -->
+            <article
+                class="group bg-white rounded-2xl p-8 border border-gray-100 shadow-float hover:shadow-glow-purple transition-all duration-300"
+            >
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-brand-purple via-brand-purple-dark to-brand-lime rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                >
+                    <Shield class="w-9 h-9 text-white" strokeWidth={2.5} />
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">
+                    Unshakeable Reliability
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Enterprise-grade infrastructure with 99.9% uptime guarantee.
+                    Your links will always work when needed.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>

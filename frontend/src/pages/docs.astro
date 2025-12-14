@@ -1,0 +1,429 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Code, Zap, Link2, Database } from "lucide-astro";
+---
+
+<Layout title="API Documentation - Shortitfast">
+    <div
+        class="bg-gradient-to-br from-purple-50 via-white to-lime-50 py-12 md:py-20 px-4 sm:px-6"
+    >
+        <div
+            class="max-w-5xl mx-auto bg-white/80 backdrop-blur-lg rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl"
+        >
+            <div
+                class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6"
+            >
+                <Code
+                    class="w-8 h-8 sm:w-10 sm:h-10 text-brand-purple flex-shrink-0"
+                />
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">
+                    API Documentation
+                </h1>
+            </div>
+            <p class="text-gray-600 mb-8 sm:mb-12 text-sm sm:text-base">
+                Simple REST API for URL shortening. Perfect for integrating into
+                your projects.
+            </p>
+
+            <!-- Base URL -->
+            <div
+                class="mb-8 sm:mb-12 p-4 sm:p-6 bg-gradient-to-r from-brand-purple/5 to-brand-lime/5 rounded-2xl border border-brand-purple/20"
+            >
+                <h3 class="text-sm font-semibold text-brand-purple mb-2">
+                    Base URL
+                </h3>
+                <code
+                    class="text-sm sm:text-lg font-mono text-gray-800 break-all"
+                    >https://your-domain.com/shortitfast</code
+                >
+            </div>
+
+            <!-- Endpoints -->
+            <div class="space-y-6 sm:space-y-8">
+                <!-- POST /postUrl -->
+                <div
+                    class="border border-gray-200 rounded-2xl p-4 sm:p-6 hover:border-brand-purple/50 transition-colors"
+                >
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4"
+                    >
+                        <span
+                            class="px-3 py-1 bg-green-100 text-green-700 font-semibold rounded-lg text-sm w-fit"
+                            >POST</span
+                        >
+                        <code
+                            class="text-base sm:text-lg font-mono text-gray-800 break-all"
+                            >/postUrl</code
+                        >
+                    </div>
+
+                    <p class="text-gray-700 mb-4 text-sm sm:text-base">
+                        Create a new shortened URL.
+                    </p>
+
+                    <h4
+                        class="font-semibold text-gray-800 mb-2 text-sm sm:text-base"
+                    >
+                        Request Body
+                    </h4>
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-brand-purple/20 p-4 sm:p-5 rounded-2xl mb-4 shadow-lg"
+                    >
+                        <code class="text-xs sm:text-sm block">
+                            <span class="text-brand-lime">{"{"}</span><br />
+                            <span class="ml-4 text-blue-300">"url"</span><span
+                                class="text-gray-400">:</span
+                            >
+                            <span class="text-green-300"
+                                >"https://example.com/very/long/url"</span
+                            ><br />
+                            <span class="text-brand-lime">{"}"}</span>
+                        </code>
+                    </div>
+
+                    <h4
+                        class="font-semibold text-gray-800 mb-2 text-sm sm:text-base"
+                    >
+                        Response (Success)
+                    </h4>
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-brand-purple/20 p-4 sm:p-5 rounded-2xl mb-4 shadow-lg"
+                    >
+                        <code class="text-xs sm:text-sm block">
+                            <span class="text-brand-lime">{"{"}</span><br />
+                            <span class="ml-4 text-blue-300">"message"</span
+                            ><span class="text-gray-400">:</span>
+                            <span class="text-green-300"
+                                >"Inserted the new URL"</span
+                            ><span class="text-gray-400">,</span><br />
+                            <span class="ml-4 text-blue-300">"shortUrl"</span
+                            ><span class="text-gray-400">:</span>
+                            <span class="text-green-300"
+                                >"https://shortitfast.com/shortitfast/abc123"</span
+                            ><span class="text-gray-400">,</span><br />
+                            <span class="ml-4 text-blue-300">"longUrl"</span
+                            ><span class="text-gray-400">:</span>
+                            <span class="text-green-300"
+                                >"https://example.com/very/long/url"</span
+                            ><br />
+                            <span class="text-brand-lime">{"}"}</span>
+                        </code>
+                    </div>
+
+                    <h4
+                        class="font-semibold text-gray-800 mb-2 text-sm sm:text-base"
+                    >
+                        Response (URL Already Exists)
+                    </h4>
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-brand-purple/20 p-4 sm:p-5 rounded-2xl shadow-lg"
+                    >
+                        <code class="text-xs sm:text-sm block">
+                            <span class="text-brand-lime">{"{"}</span><br />
+                            <span class="ml-4 text-blue-300">"message"</span
+                            ><span class="text-gray-400">:</span>
+                            <span class="text-green-300"
+                                >"URL already shortified!"</span
+                            ><span class="text-gray-400">,</span><br />
+                            <span class="ml-4 text-blue-300">"shortUrl"</span
+                            ><span class="text-gray-400">:</span>
+                            <span class="text-green-300"
+                                >"https://shortitfast.com/shortitfast/abc123"</span
+                            ><span class="text-gray-400">,</span><br />
+                            <span class="ml-4 text-blue-300">"longUrl"</span
+                            ><span class="text-gray-400">:</span>
+                            <span class="text-green-300"
+                                >"https://example.com/very/long/url"</span
+                            ><br />
+                            <span class="text-brand-lime">{"}"}</span>
+                        </code>
+                    </div>
+                </div>
+
+                <!-- GET /:hashValue -->
+                <div
+                    class="border border-gray-200 rounded-2xl p-4 sm:p-6 hover:border-brand-purple/50 transition-colors"
+                >
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4"
+                    >
+                        <span
+                            class="px-3 py-1 bg-blue-100 text-blue-700 font-semibold rounded-lg text-sm w-fit"
+                            >GET</span
+                        >
+                        <code
+                            class="text-base sm:text-lg font-mono text-gray-800 break-all"
+                            >/:hashValue</code
+                        >
+                    </div>
+
+                    <p class="text-gray-700 mb-4 text-sm sm:text-base">
+                        Redirect to the original URL using the short URL hash.
+                    </p>
+
+                    <h4
+                        class="font-semibold text-gray-800 mb-2 text-sm sm:text-base"
+                    >
+                        Example
+                    </h4>
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-brand-purple/20 p-4 sm:p-5 rounded-2xl mb-4 shadow-lg"
+                    >
+                        <code class="text-xs sm:text-sm block text-green-300">
+                            GET https://shortitfast.com/shortitfast/abc123
+                        </code>
+                    </div>
+
+                    <h4
+                        class="font-semibold text-gray-800 mb-2 text-sm sm:text-base"
+                    >
+                        Response
+                    </h4>
+                    <p class="text-gray-700 text-sm sm:text-base">
+                        Redirects (HTTP 302) to the original URL. If the hash is
+                        not found, returns a 404 error.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Example Code -->
+            <div class="mt-8 sm:mt-12">
+                <h2
+                    class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6"
+                >
+                    Example Usage
+                </h2>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <!-- JavaScript Example -->
+                    <div>
+                        <h3
+                            class="text-base sm:text-lg font-semibold text-gray-800 mb-3"
+                        >
+                            JavaScript (Fetch API)
+                        </h3>
+                        <div
+                            class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-brand-purple/20 p-4 sm:p-6 rounded-2xl shadow-lg"
+                        >
+                            <code class="text-xs sm:text-sm block">
+                                <span class="text-purple-400">const</span>
+                                <span class="text-blue-300">shortenUrl</span>
+                                <span class="text-gray-400">=</span>
+                                <span class="text-purple-400">async</span>
+                                <span class="text-gray-400">(</span><span
+                                    class="text-orange-300">longUrl</span
+                                ><span class="text-gray-400">)</span>
+                                <span class="text-purple-400">=></span>
+                                <span class="text-brand-lime">{"{"}</span><br />
+                                <span class="ml-4 text-purple-400">const</span>
+                                <span class="text-blue-300">response</span>
+                                <span class="text-gray-400">=</span>
+                                <span class="text-purple-400">await</span>
+                                <span class="text-yellow-300">fetch</span><span
+                                    class="text-gray-400">(</span
+                                ><span class="text-green-300"
+                                    >'https://your-domain.com/shortitfast/postUrl'</span
+                                ><span class="text-gray-400">,</span>
+                                <span class="text-brand-lime">{"{"}</span><br />
+                                <span class="ml-8 text-blue-300">method</span
+                                ><span class="text-gray-400">:</span>
+                                <span class="text-green-300">'POST'</span><span
+                                    class="text-gray-400">,</span
+                                ><br />
+                                <span class="ml-8 text-blue-300">headers</span
+                                ><span class="text-gray-400">:</span>
+                                <span class="text-brand-lime">{"{"}</span>
+                                <span class="text-green-300"
+                                    >'Content-Type'</span
+                                ><span class="text-gray-400">:</span>
+                                <span class="text-green-300"
+                                    >'application/json'</span
+                                >
+                                <span class="text-brand-lime">{"}"}</span><span
+                                    class="text-gray-400">,</span
+                                ><br />
+                                <span class="ml-8 text-blue-300">body</span
+                                ><span class="text-gray-400">:</span>
+                                <span class="text-blue-300">JSON</span><span
+                                    class="text-gray-400">.</span
+                                ><span class="text-yellow-300">stringify</span
+                                ><span class="text-gray-400">(</span><span
+                                    class="text-brand-lime">{"{"}</span
+                                >
+                                <span class="text-blue-300">url</span><span
+                                    class="text-gray-400">:</span
+                                >
+                                <span class="text-orange-300">longUrl</span>
+                                <span class="text-brand-lime">{"}"}</span><span
+                                    class="text-gray-400">)</span
+                                ><br />
+                                <span class="ml-4 text-brand-lime">{"}"}</span
+                                ><span class="text-gray-400">);</span><br />
+                                <br />
+                                <span class="ml-4 text-purple-400">const</span>
+                                <span class="text-blue-300">data</span>
+                                <span class="text-gray-400">=</span>
+                                <span class="text-purple-400">await</span>
+                                <span class="text-blue-300">response</span><span
+                                    class="text-gray-400">.</span
+                                ><span class="text-yellow-300">json</span><span
+                                    class="text-gray-400">();</span
+                                ><br />
+                                <span class="ml-4 text-blue-300">console</span
+                                ><span class="text-gray-400">.</span><span
+                                    class="text-yellow-300">log</span
+                                ><span class="text-gray-400">(</span><span
+                                    class="text-green-300">'Short URL:'</span
+                                ><span class="text-gray-400">,</span>
+                                <span class="text-blue-300">data</span><span
+                                    class="text-gray-400">.</span
+                                ><span class="text-blue-300">shortUrl</span
+                                ><span class="text-gray-400">);</span><br />
+                                <span class="ml-4 text-purple-400">return</span>
+                                <span class="text-blue-300">data</span><span
+                                    class="text-gray-400">.</span
+                                ><span class="text-blue-300">shortUrl</span
+                                ><span class="text-gray-400">;</span><br />
+                                <span class="text-brand-lime">{"}"}</span><span
+                                    class="text-gray-400">;</span
+                                ><br />
+                                <br />
+                                <span class="text-gray-500">// Usage</span><br
+                                />
+                                <span class="text-yellow-300">shortenUrl</span
+                                ><span class="text-gray-400">(</span><span
+                                    class="text-green-300"
+                                    >'https://example.com/very/long/url'</span
+                                ><span class="text-gray-400">);</span>
+                            </code>
+                        </div>
+                    </div>
+
+                    <!-- cURL Example -->
+                    <div>
+                        <h3
+                            class="text-base sm:text-lg font-semibold text-gray-800 mb-3"
+                        >
+                            cURL
+                        </h3>
+                        <div
+                            class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-brand-purple/20 p-4 sm:p-6 rounded-2xl shadow-lg"
+                        >
+                            <code class="text-xs sm:text-sm block">
+                                <span class="text-yellow-300">curl</span>
+                                <span class="text-blue-300">-X</span>
+                                <span class="text-green-300">POST</span>
+                                <span class="text-gray-300"
+                                    >https://your-domain.com/shortitfast/postUrl</span
+                                >
+                                <span class="text-purple-400">\</span><br />
+                                <span class="ml-4 text-blue-300">-H</span>
+                                <span class="text-green-300"
+                                    >"Content-Type: application/json"</span
+                                >
+                                <span class="text-purple-400">\</span><br />
+                                <span class="ml-4 text-blue-300">-d</span>
+                                <span class="text-green-300"
+                                    >'{"{"}"url":
+                                    "https://example.com/very/long/url"{
+                                        "}"
+                                    }'</span
+                                >
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Details -->
+            <div class="mt-8 sm:mt-12 p-4 sm:p-6 bg-gray-50 rounded-2xl">
+                <h2
+                    class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6"
+                >
+                    Technical Details
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="flex items-start gap-3">
+                        <Zap
+                            class="w-5 h-5 sm:w-6 sm:h-6 text-brand-purple flex-shrink-0 mt-1"
+                        />
+                        <div>
+                            <h4
+                                class="font-semibold text-gray-800 mb-1 text-sm sm:text-base"
+                            >
+                                Hash Generation
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-600">
+                                Uses UUID v4 with Base62 encoding for unique,
+                                short hashes
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <Database
+                            class="w-5 h-5 sm:w-6 sm:h-6 text-brand-purple flex-shrink-0 mt-1"
+                        />
+                        <div>
+                            <h4
+                                class="font-semibold text-gray-800 mb-1 text-sm sm:text-base"
+                            >
+                                Storage
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-600">
+                                PostgreSQL database for reliable URL mapping
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <Link2
+                            class="w-5 h-5 sm:w-6 sm:h-6 text-brand-purple flex-shrink-0 mt-1"
+                        />
+                        <div>
+                            <h4
+                                class="font-semibold text-gray-800 mb-1 text-sm sm:text-base"
+                            >
+                                Duplicate Detection
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-600">
+                                Automatically returns existing short URL for
+                                duplicate submissions
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <Code
+                            class="w-5 h-5 sm:w-6 sm:h-6 text-brand-purple flex-shrink-0 mt-1"
+                        />
+                        <div>
+                            <h4
+                                class="font-semibold text-gray-800 mb-1 text-sm sm:text-base"
+                            >
+                                Open Source
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-600">
+                                View the code on <a
+                                    href="https://github.com/Crisiszzz07"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-brand-purple hover:underline"
+                                    >GitHub</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div
+                class="mt-6 sm:mt-8 p-3 sm:p-4 bg-yellow-50 border border-yellow-200 rounded-xl"
+            >
+                <p class="text-xs sm:text-sm text-yellow-800">
+                    <strong>Note:</strong> This is a portfolio project. For production
+                    use, please host your own instance or contact the developer for
+                    more information.
+                </p>
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+    /* Brand Colors */
+    --color-brand-cream: #fdfcf6;
+    --color-brand-purple: #8b5cf6;
+    --color-brand-purple-dark: #7c3aed;
+    --color-brand-lime: #bef264;
+    --color-brand-lime-dark: #a3e635;
+
+    /* Font Family */
+    --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+
+    /* Border Radius */
+    --radius-3xl: 1.5rem;
+    --radius-4xl: 2rem;
+
+    /* Box Shadows */
+    --shadow-float: 0 20px 60px -15px rgb(0 0 0 / 0.15);
+    --shadow-glow-purple: 0 0 40px rgb(139 92 246 / 0.3);
+    --shadow-glow-purple-lg: 0 0 60px rgb(139 92 246 / 0.4);
+}
+
+/* Custom Utilities */
+@utility bg-gradient-purple {
+    background-image: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
