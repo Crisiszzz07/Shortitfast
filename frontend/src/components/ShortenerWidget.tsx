@@ -160,15 +160,22 @@ export default function ShortenerWidget() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!url) return;
-
         setIsLoading(true);
+        // Assuming there might be an error state, adding it here for consistency
+        // setError(''); 
+        setShortUrl('');
+        setIsExisting(false);
 
         try {
-            const response = await fetch('http://localhost:3001/shortitfast/postUrl', {
+            // Use production URL or fallback to localhost for development
+            const API_URL = import.meta.env.PUBLIC_API_URL || 'https://shortitfast.onrender.com';
+
+            const response = await fetch(`${API_URL}/shortitfast/postUrl`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ url })
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ url }),
             });
 
             const data = await response.json();
