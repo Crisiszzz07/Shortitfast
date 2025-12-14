@@ -20,9 +20,9 @@
 
   <br />
 
-  [**Explore the Docs »**](https://shortitfast.onrender.com/docs)
+  [**Explore the Docs »**](https://shortitfast.vercel.app/docs)
   <br />
-  [View Demo](https://shortitfast.onrender.com) · [Report Bug](https://github.com/Crisiszzz07/Shortitfast/issues)
+  [View Demo](https://shortitfast.vercel.app/) · [Report Bug](https://github.com/Crisiszzz07/Shortitfast/issues)
   
 </div>
 
@@ -71,7 +71,7 @@ Follow these steps to run the project locally.
 1. **Clone the repo**
 
     ```bash
-    git clone [https://github.com/yourusername/shortitfast.git](https://github.com/yourusername/shortitfast.git)
+    git clone [https://github.com/Crisiszzz07/shortitfast.git](https://github.com/Crisiszzz07/shortitfast.git)
     cd shortitfast
     ```
 
